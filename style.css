@@ -58,6 +58,7 @@ p.bio {
 .btn {
   font-size: 14px; /* button text chhota */
   font-size: 0.9rem;
+  baground-colour:pink;
 }
 
 .animated-text {
@@ -100,11 +101,4 @@ p.bio {
     font-weight: bold;
     white-space: nowrap;
   }
-.search button {
-  padding: 8px 15px;
-  border: none;
-  border-radius: 0 20px 20px 0;
-  background: white;
-  cursor: pointer;
-    }
 
