@@ -1,5 +1,4 @@
 body {
-  min-height: 100vh;
   margin:0;
   display: flex;
   justify-content: center;
@@ -48,13 +47,11 @@ h1 {
 
 p.bio {
   font-size: 16px; /* normal */
-  font-size: 1rem;
 }
 
 .btn {
   font-size: 14px; /* button text chhota */
   font-size: 0.9rem;
-  baground-colour:pink;
 }
 
 .animated-text {
