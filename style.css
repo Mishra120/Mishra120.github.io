@@ -1,0 +1,48 @@
+body {
+  background: linear-gradient(-45deg, #1d2671, #c33764, #f5af19, #ff5e62);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+.profile-pic {.profile-pic {
+  box-shadow: 0 0 20px #c33764;
+}
+              
+  transition: transform 0.3s ease;
+}
+.profile-pic:hover {
+  transform: scale(1.1);
+}
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+.btn::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0;
+  top: 0;
+  left: 0;
+  background: rgba(255,255,255,0.2);
+  transition: 0.5s;
+}
+.btn:hover::after {
+  height: 100%;
+}
+.animated-text {
+  background: linear-gradient(90deg, #ff5e62, #f5af19, #1d2671);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textMove 3s linear infinite;
+}
+
+@keyframes textMove {
+  0% {background-position: 0%;}
+  100% {background-position: 200%;}
+}
