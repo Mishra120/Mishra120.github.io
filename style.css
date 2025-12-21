@@ -1,4 +1,9 @@
 body {
+  min-height: 100vh;
+  margin:0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: linear-gradient(-45deg, #1d2671, #c33764, #f5af19, #ff5e62);
   background-size: 400% 400%;
   animation: gradientBG 15s ease infinite;
@@ -11,6 +16,9 @@ body {
 }
 .profile-pic {.profile-pic {
   box-shadow: 0 0 20px #c33764;
+  width: 120px;
+  height: 120px;
+  max-width: 100%;
 }
               
   transition: transform 0.3s ease;
@@ -37,14 +45,19 @@ body {
 }
 h1 {
   font-size: 50px; /* bada */
+  font-size: 2rem;
+  margin-bottom:8px;
+  
 }
 
 p.bio {
   font-size: 16px; /* normal */
+  font-size: 1rem;
 }
 
 .btn {
   font-size: 14px; /* button text chhota */
+  font-size: 0.9rem;
 }
 
 .animated-text {
@@ -87,4 +100,11 @@ p.bio {
     font-weight: bold;
     white-space: nowrap;
   }
+.search button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 0 20px 20px 0;
+  background: white;
+  cursor: pointer;
+    }
 
