@@ -35,6 +35,18 @@ body {
 .btn:hover::after {
   height: 100%;
 }
+h1 {
+  font-size: 36px; /* bada */
+}
+
+p.bio {
+  font-size: 16px; /* normal */
+}
+
+.btn {
+  font-size: 14px; /* button text chhota */
+}
+
 .animated-text {
   background: linear-gradient(90deg, #ff5e62, #f5af19, #1d2671);
   -webkit-background-clip: text;
