@@ -1,7 +1,7 @@
 body {
   margin:0;
   display: flex;
-  justify-content: center;
+  align-iem: center;
   background: linear-gradient(-45deg, #1d2671, #c33764, #f5af19, #ff5e62);
   background-size: 400% 400%;
   animation: gradientBG 15s ease infinite;
@@ -40,9 +40,6 @@ body {
 }
 h1 {
   font-size: 50px; /* bada */
-  font-size: 2rem;
-  margin-bottom:8px;
-  
 }
 
 p.bio {
@@ -51,7 +48,6 @@ p.bio {
 
 .btn {
   font-size: 14px; /* button text chhota */
-  font-size: 0.9rem;
 }
 
 .animated-text {
