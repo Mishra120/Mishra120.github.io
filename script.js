@@ -78,24 +78,23 @@ function acceptPopup() {
 function closePopup() {
   document.getElementById("welcomePopup").style.display = "none";
 }
-function toggleLoginOptions() {
-  let box = document.getElementById("loginOptions");
-  box.style.display = box.style.display === "block" ? "none" : "block";
-}
+ document.addEventListener("DOMContentLoaded", function () {
 
-function socialLogin(type) {
-  let url = "";
+  window.toggleLogin = function () {
+    const box = document.getElementById("loginBox");
+    box.style.display = box.style.display === "block" ? "none" : "block";
+  };
 
-  if (type === "youtube") {
-    url = "https://accounts.google.com/signin";
-  }
-  if (type === "instagram") {
-    url = "https://www.instagram.com/accounts/login/";
-  }
-  if (type === "facebook") {
-    url = "https://www.facebook.com/login/";
-  }
+  window.socialLogin = function (type) {
+    if (type === "youtube") {
+      window.open("https://accounts.google.com/", "_blank");
+    }
+    if (type === "instagram") {
+      window.open("https://www.instagram.com/accounts/login/", "_blank");
+    }
+    if (type === "facebook") {
+      window.open("https://www.facebook.com/login/", "_blank");
+    }
+  };
 
-  window.open(url, "_self"); // same tab
-}
 });
