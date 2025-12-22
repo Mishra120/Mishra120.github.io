@@ -74,23 +74,6 @@ document.addEventListener("DOMContentLoaded", function() {
     cropper = null;
   }
 
-  // Click outside to hide menu/bio
-  document.addEventListener("click", function(e){
-    let menu = document.getElementById("menuBox");
-    let bio = document.getElementById("bioBox");
-    let dots = document.getElementById("menuBtn");
-    let bioBtn = document.getElementById("bioBtn");
-
-    // Agar koi element undefined ho, ignore
-    if(!menu || !bio || !dots || !bioBtn) return;
-
-    if(!menu.contains(e.target) &&
-       !bio.contains(e.target) &&
-       !dots.contains(e.target) &&
-       !bioBtn.contains(e.target)){
-         menu.style.display="none";
-         bio.style.display="none";
-    }
   });
 
 });
