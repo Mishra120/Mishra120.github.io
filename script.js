@@ -16,11 +16,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.openSite = openSite;
 
-  window.toggleMenu = function () {
-    let menu = document.getElementById("menuBox");
-    menu.style.display = menu.style.display === "block" ? "none" : "block";
-  };
+  let menuTimer = null;
 
+window.toggleMenu = function () {
+  let menu = document.getElementById("menuBox");
+
+  // Agar already open hai to close
+  if (menu.style.display === "block") {
+    menu.style.display = "none";
+    clearTimeout(menuTimer);
+    return;
+  }
+
+  // Open menu
+  menu.style.display = "block";
+
+  // Purana timer clear
+  clearTimeout(menuTimer);
+
+  // 10 second baad auto close
+  menuTimer = setTimeout(() => {
+    menu.style.display = "none";
+  }, 10000);
+};
   window.toggleBio = function () {
     let bio = document.getElementById("bioBox");
     bio.style.display = bio.style.display === "block" ? "none" : "block";
