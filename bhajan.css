@@ -272,3 +272,13 @@
   background: linear-gradient(#ff0080,#00f0ff);
   border-radius: 10px;
 }
+.playlist-box {
+  position: relative;
+
+  background: rgba(15, 15, 25, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border-radius: 22px;
+  transition: background 0.3s ease, filter 0.3s ease;
+}
