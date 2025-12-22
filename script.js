@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-
+if (!menu || !bio) return;
+  
   function openSite() {
     let text = document.getElementById("siteInput").value.toLowerCase().trim();
 
