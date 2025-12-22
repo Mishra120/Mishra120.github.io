@@ -324,41 +324,59 @@ body.dark .menu-box p:hover {
   to {
     transform: translateY(0);
   }
-}
+  /* ===== LOGIN CIRCLE TOP LEFT ===== */
 .login-circle {
   position: fixed;
   top: 12px;
   left: 12px;
-  width: 45px;
-  height: 45px;
+  width: 42px;
+  height: 42px;
+  background: #ffffff;
+  color: #000;
   border-radius: 50%;
-  background: #ff9800;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 20px;
   cursor: pointer;
-  z-index: 9999;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  z-index: 2000;
+  user-select: none;
 }
 
-.login-options {
+/* Hover effect */
+.login-circle:active {
+  transform: scale(0.95);
+}
+
+/* ===== LOGIN POPUP BOX ===== */
+.login-box {
   position: fixed;
-  top: 65px;
+  top: 62px;          /* circle ke niche */
   left: 12px;
-  background: #fff;
-  border-radius: 10px;
+  background: #ffffff;
+  border-radius: 12px;
   padding: 10px;
+  width: 170px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
   display: none;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  z-index: 1999;
 }
 
-.login-options button {
-  display: block;
+/* Buttons inside popup */
+.login-box button {
   width: 100%;
+  padding: 8px 10px;
   margin: 6px 0;
-  padding: 8px;
   border: none;
-  border-radius: 6px;
-  background: #f1f1f1;
+  border-radius: 8px;
+  background: #f2f2f2;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.login-box button:active {
+  background: #ddd;
+}
 }
 }
