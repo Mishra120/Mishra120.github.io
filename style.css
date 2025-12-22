@@ -106,7 +106,7 @@ p.bio {
 @keyframes borderGlow {
   0%   { border-color: red; }
   25%  { border-color: orange; }
-  50%  { border-color: yellow; }
+  50%  { border-color: green; }
   75%  { border-color: lime; }
   100% { border-color: red; }
 }
@@ -150,7 +150,7 @@ p.bio {
   height: 48px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid #ffcc00;
+  border: 2px solid gray;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
