@@ -37,3 +37,17 @@ function seek(sec){
 audio.addEventListener("ended", nextSong);
 
 loadSong(0);
+const slider = document.getElementById("brightnessRange");
+const box = document.querySelector(".playlist-box");
+
+slider.addEventListener("input", () => {
+  const value = slider.value;
+
+  // brightness (40%–100%)
+  box.style.filter = `brightness(${value}%)`;
+
+  // transparency auto adjust
+  const opacity = value / 160; // lower value = more transparent
+  box.style.background = `rgba(15, 15, 25, ${opacity})`;
+});
+
