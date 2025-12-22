@@ -98,7 +98,17 @@ p.bio {
 .gallery-btn:hover{
   background: orange;
 }
-
+.bhajan-btn {
+  padding: 12px 25px;
+  background: gold;
+  color: black;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+}
+.bhajan-btn:hover{
+  background: orange;
+}
 .search{
   position: fixed;
   bottom: 15px;
