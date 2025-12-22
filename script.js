@@ -10,9 +10,6 @@ function openSite(){
   else if(text === "facebook"){
     window.open("https://facebook.com","_blank");
   }
-    else if(text === "chatgpt"){
-    window.open("https://chatgpt.com","_blank");
-    }
   else{
     alert("Just Type Social Media Sites👍");
   }
