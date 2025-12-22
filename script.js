@@ -34,10 +34,10 @@ window.toggleMenu = function () {
   // Purana timer clear
   clearTimeout(menuTimer);
 
-  // 10 second baad auto close
+  // 2 second baad auto close
   menuTimer = setTimeout(() => {
     menu.style.display = "none";
-  }, 10000);
+  }, 2000);
 };
   window.toggleBio = function () {
     let bio = document.getElementById("bioBox");
@@ -47,7 +47,6 @@ window.toggleMenu = function () {
   window.toggleDark = function () {
     document.body.classList.toggle("dark");
   };
-
   let cropper;
 
   window.openCrop = function () {
@@ -80,5 +79,21 @@ window.toggleMenu = function () {
     document.getElementById("cropBox").style.display = "none";
     cropper.destroy();
   };
+document.addEventListener("click", function (e) {
+  let menu = document.getElementById("menuBox");
+  let bio = document.getElementById("bioBox");
+  let dots = document.getElementById("menuBtn"); // 3 dot button
+  let bioBtn = document.getElementById("bioBtn"); // bio open button
 
+  // Agar click menu, bio, ya buttons ke bahar hua
+  if (
+    !menu.contains(e.target) &&
+    !bio.contains(e.target) &&
+    !dots.contains(e.target) &&
+    !bioBtn.contains(e.target)
+  ) {
+    menu.style.display = "none";
+    bio.style.display = "none";
+  }
+});
 });
