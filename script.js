@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let bio = document.getElementById("bioBox");
     bio.style.display = bio.style.display === "block" ? "none" : "block";
   };
-
+  
   window.toggleDark = function () {
     document.body.classList.toggle("dark");
   };
