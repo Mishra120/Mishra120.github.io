@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-if (!menu || !bio) return;
   
   function openSite() {
     let text = document.getElementById("siteInput").value.toLowerCase().trim();
@@ -79,6 +78,7 @@ window.toggleMenu = function () {
     document.getElementById("cropBox").style.display = "none";
     cropper.destroy();
   };
+});
 document.addEventListener("click", function (e) {
   let menu = document.getElementById("menuBox");
   let bio = document.getElementById("bioBox");
