@@ -67,6 +67,8 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!localStorage.getItem("popupAccepted")) {
     document.getElementById("welcomePopup").style.display = "flex";
   }
+});
+
 function acceptPopup() {
   localStorage.setItem("popupAccepted", "yes");
   document.getElementById("welcomePopup").style.display = "none";
@@ -75,5 +77,3 @@ function acceptPopup() {
 function closePopup() {
   document.getElementById("welcomePopup").style.display = "none";
 }
-  }
-});
