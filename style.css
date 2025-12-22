@@ -87,6 +87,18 @@ p.bio {
     font-weight: bold;
     white-space: nowrap;
   }
+.gallery-btn {
+  padding: 12px 25px;
+  background: gold;
+  color: black;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+}
+.gallery-btn:hover{
+  background: orange;
+}
+
 .search{
   position: fixed;
   bottom: 15px;
