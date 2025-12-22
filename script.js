@@ -16,23 +16,6 @@ if (!menu || !bio) return;
   }
 
   window.openSite = openSite;
-document.addEventListener("click", function (e) {
-  let menu = document.getElementById("menuBox");
-  let bio = document.getElementById("bioBox");
-  let dots = document.getElementById("menuBtn"); // 3 dot button
-  let bioBtn = document.getElementById("bioBtn"); // bio open button
-
-  // Agar click menu, bio, ya buttons ke bahar hua
-  if (
-    !menu.contains(e.target) &&
-    !bio.contains(e.target) &&
-    !dots.contains(e.target) &&
-    !bioBtn.contains(e.target)
-  ) {
-    menu.style.display = "none";
-    bio.style.display = "none";
-  }
-});
   let menuTimer = null;
 
 window.toggleMenu = function () {
@@ -96,6 +79,21 @@ window.toggleMenu = function () {
     document.getElementById("cropBox").style.display = "none";
     cropper.destroy();
   };
-});
+document.addEventListener("click", function (e) {
+  let menu = document.getElementById("menuBox");
+  let bio = document.getElementById("bioBox");
+  let dots = document.getElementById("menuBtn"); // 3 dot button
+  let bioBtn = document.getElementById("bioBtn"); // bio open button
 
+  // Agar click menu, bio, ya buttons ke bahar hua
+  if (
+    !menu.contains(e.target) &&
+    !bio.contains(e.target) &&
+    !dots.contains(e.target) &&
+    !bioBtn.contains(e.target)
+  ) {
+    menu.style.display = "none";
+    bio.style.display = "none";
+  }
+});
 });
