@@ -78,23 +78,5 @@ function acceptPopup() {
 function closePopup() {
   document.getElementById("welcomePopup").style.display = "none";
 }
- document.addEventListener("DOMContentLoaded", function () {
-
-  window.toggleLogin = function () {
-    const box = document.getElementById("loginBox");
-    box.style.display = box.style.display === "block" ? "none" : "block";
-  };
-
-  window.socialLogin = function (type) {
-    if (type === "youtube") {
-      window.open("https://accounts.google.com/", "_blank");
-    }
-    if (type === "instagram") {
-      window.open("https://www.instagram.com/accounts/login/", "_blank");
-    }
-    if (type === "facebook") {
-      window.open("https://www.facebook.com/login/", "_blank");
-    }
-  };
-
+};
 });
