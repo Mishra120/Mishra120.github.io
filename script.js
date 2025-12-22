@@ -1,80 +1,118 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
 
-  // Open Social Sites
   function openSite() {
-    let text = document.getElementById("siteInput").value.toLowerCase().trim();
-    if (text === "instagram") window.open("https://www.instagram.com/officialchandanmishra21/", "_blank");
-    else if (text === "youtube") window.open("https://www.youtube.com/@chandan_bhaktivibes", "_blank");
-    else if (text === "facebook") window.open("https://www.facebook.com/share/1JfNgJAEmj/", "_blank");
-    else alert("Type: instagram, youtube or facebook");
+    let text = document
+      .getElementById("siteInput")
+      .value
+      .toLowerCase()
+      .trim();
+
+    if (text === "instagram") {
+      window.open(
+        "https://www.instagram.com/officialchandanmishra21/",
+        "_blank"
+      );
+    } 
+    else if (text === "youtube") {
+      window.open(
+        "https://www.youtube.com/@chandan_bhaktivibes",
+        "_blank"
+      );
+    } 
+    else if (text === "facebook") {
+      window.open(
+        "https://www.facebook.com/share/1JFnGJAEmj/",
+        "_blank"
+      );
+    } 
+    else {
+      alert("Type: instagram, youtube or facebook");
+    }
   }
+
   window.openSite = openSite;
 
-  // Menu toggle
+  /* ================= MENU TOGGLE ================= */
+
   let menuTimer = null;
-  window.toggleMenu = function() {
+
+  window.toggleMenu = function () {
     let menu = document.getElementById("menuBox");
-    if(!menu) return;
-    if(menu.style.display === "block") {
+
+    // Agar already open hai to close
+    if (menu.style.display === "block") {
       menu.style.display = "none";
       clearTimeout(menuTimer);
       return;
     }
+
+    // Open menu
     menu.style.display = "block";
+
+    // Purana timer clear
     clearTimeout(menuTimer);
-    menuTimer = setTimeout(()=>{ menu.style.display="none"; }, 2000);
-  }
 
-  // Bio toggle
-  window.toggleBio = function() {
+    // 2 second baad auto close
+    menuTimer = setTimeout(() => {
+      menu.style.display = "none";
+    }, 2000);
+  };
+
+  /* ================= BIO TOGGLE ================= */
+
+  window.toggleBio = function () {
     let bio = document.getElementById("bioBox");
-    if(!bio) return;
-    bio.style.display = (bio.style.display==="block") ? "none" : "block";
-  }
+    bio.style.display = bio.style.display === "block" ? "none" : "block";
+  };
 
-  // Dark Mode
-  window.toggleDark = function() {
+  /* ================= DARK MODE ================= */
+
+  window.toggleDark = function () {
     document.body.classList.toggle("dark");
-  }
+  };
 
-  // Cropper
+  /* ================= IMAGE CROPPER ================= */
+
   let cropper;
-  window.openCrop = function() {
-    let fileInput = document.getElementById("fileInput");
-    if(fileInput) fileInput.click();
-  }
+
+  window.openCrop = function () {
+    document.getElementById("fileInput").click();
+  };
 
   let fileInput = document.getElementById("fileInput");
-  if(fileInput){
-    fileInput.addEventListener("change", function(e){
-      let file = e.target.files[0];
-      if(!file) return;
-      let reader = new FileReader();
-      reader.onload = function(){
-        let cropBox = document.getElementById("cropBox");
-        let img = document.getElementById("cropImage");
-        if(cropBox && img){
-          cropBox.style.display = "block";
-          img.src = reader.result;
-          cropper = new Cropper(img, { aspectRatio: 1, viewMode: 1 });
-        }
-      }
-      reader.readAsDataURL(file);
-    });
-  }
 
-  window.applyCrop = function(){
-    if(!cropper) return;
-    let canvas = cropper.getCroppedCanvas({width:200, height:200});
-    let profilePic = document.getElementById("profilePic");
-    let cropBox = document.getElementById("cropBox");
-    if(profilePic) profilePic.src = canvas.toDataURL();
-    if(cropBox) cropBox.style.display="none";
-    cropper.destroy();
-    cropper = null;
-  }
+  fileInput.addEventListener("change", function (e) {
+    let file = e.target.files[0];
+    if (!file) return;
 
+    let reader = new FileReader();
+
+    reader.onload = function () {
+      document.getElementById("cropBox").style.display = "block";
+
+      let img = document.getElementById("cropImage");
+      img.src = reader.result;
+
+      cropper = new Cropper(img, {
+        aspectRatio: 1,
+        viewMode: 1,
+      });
+    };
+
+    reader.readAsDataURL(file);
   });
 
-});
+  window.applyCrop = function () {
+    let canvas = cropper.getCroppedCanvas({
+      width: 200,
+      height: 200,
+    });
 
+    document.getElementById("profilePic").src = canvas.toDataURL();
+    document.getElementById("cropBox").style.display = "none";
+
+    cropper.destroy();
+  };
+
+});
+});
