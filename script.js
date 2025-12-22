@@ -1,73 +1,66 @@
-function openSite() {
-  let text = document.getElementById("siteInput").value.toLowerCase().trim();
+document.addEventListener("DOMContentLoaded", function () {
 
-  if (text === "instagram") {
-    window.open(
-      "https://www.instagram.com/officialchandanmishra21/",
-      "_blank"
-    );
-  } else if (text === "youtube") {
-    window.open(
-      "https://www.youtube.com/@chandan_bhaktivibes",
-      "_blank"
-    );
-  } else if (text === "facebook") {
-    window.open(
-      "https://www.facebook.com/share/1JFNgJAEmj/",
-      "_blank"
-    );
-  } else {
-    alert("Just type: instagram, youtube or facebook 👍");
+  function openSite() {
+    let text = document.getElementById("siteInput").value.toLowerCase().trim();
+
+    if (text === "instagram") {
+      window.open("https://www.instagram.com/officialchandanmishra21/", "_blank");
+    } else if (text === "youtube") {
+      window.open("https://www.youtube.com/@chandan_bhaktivibes", "_blank");
+    } else if (text === "facebook") {
+      window.open("https://www.facebook.com/share/1JFNgJAEmj/", "_blank");
+    } else {
+      alert("Type: instagram, youtube or facebook");
+    }
   }
-}
 
-function toggleBio() {
-  let bio = document.getElementById("bioBox");
-  bio.style.display = bio.style.display === "block" ? "none" : "block";
-}
+  window.openSite = openSite;
 
-function toggleMenu() {
-  let menu = document.getElementById("menuBox");
-  menu.style.display = menu.style.display === "block" ? "none" : "block";
-}
-
-function toggleDark() {
-  document.body.classList.toggle("dark");
-}
-
-let cropper;
-
-function openCrop() {
-  document.getElementById("fileInput").click();
-}
-
-document.getElementById("fileInput").addEventListener("change", function (e) {
-  let file = e.target.files[0];
-  if (!file) return;
-
-  let reader = new FileReader();
-
-  reader.onload = function () {
-    document.getElementById("cropBox").style.display = "block";
-    let img = document.getElementById("cropImage");
-    img.src = reader.result;
-
-    cropper = new Cropper(img, {
-      aspectRatio: 1,
-      viewMode: 1,
-    });
+  window.toggleMenu = function () {
+    let menu = document.getElementById("menuBox");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
   };
 
-  reader.readAsDataURL(file);
-});
+  window.toggleBio = function () {
+    let bio = document.getElementById("bioBox");
+    bio.style.display = bio.style.display === "block" ? "none" : "block";
+  };
 
-function applyCrop() {
-  let canvas = cropper.getCroppedCanvas({
-    width: 200,
-    height: 200,
+  window.toggleDark = function () {
+    document.body.classList.toggle("dark");
+  };
+
+  let cropper;
+
+  window.openCrop = function () {
+    document.getElementById("fileInput").click();
+  };
+
+  let fileInput = document.getElementById("fileInput");
+
+  fileInput.addEventListener("change", function (e) {
+    let file = e.target.files[0];
+    if (!file) return;
+
+    let reader = new FileReader();
+    reader.onload = function () {
+      document.getElementById("cropBox").style.display = "block";
+      let img = document.getElementById("cropImage");
+      img.src = reader.result;
+
+      cropper = new Cropper(img, {
+        aspectRatio: 1,
+        viewMode: 1,
+      });
+    };
+    reader.readAsDataURL(file);
   });
 
-  document.getElementById("profilePic").src = canvas.toDataURL();
-  document.getElementById("cropBox").style.display = "none";
-  cropper.destroy();
-}
+  window.applyCrop = function () {
+    let canvas = cropper.getCroppedCanvas({ width: 200, height: 200 });
+    document.getElementById("profilePic").src = canvas.toDataURL();
+    document.getElementById("cropBox").style.display = "none";
+    cropper.destroy();
+  };
+
+});
