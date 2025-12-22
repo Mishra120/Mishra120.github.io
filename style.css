@@ -124,5 +124,82 @@ p.bio {
   padding: 8px 14px;
   border-radius: 20px;
   cursor: pointer;
-    }
+}
+
+/* Dark mode */
+body.dark {
+  background: #121212;
+  color: white;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  gap: 10px;
+}
+
+/* Profile pic */
+.profile img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid #ffcc00;
+  cursor: pointer;
+}
+
+/* Bio box */
+.bio-box {
+  display: none;
+  background: #fff7cc;
+  padding: 8px 12px;
+  border-radius: 8px;
+  animation: fade 0.3s ease;
+}
+
+body.dark .bio-box {
+  background: #333;
+}
+
+/* 3 dot */
+.menu {
+  margin-left: auto;
+  position: relative;
+}
+
+.menu span {
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Menu box */
+.menu-box {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 25px;
+  background: white;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.menu-box p {
+  margin: 0;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.menu-box p:hover {
+  background: #ffcc00;
+}
+
+/* Dark menu */
+body.dark .menu-box {
+  background: #222;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
