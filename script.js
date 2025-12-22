@@ -10,8 +10,11 @@ function openSite(){
   else if(text === "facebook"){
     window.open("https://facebook.com","_blank");
   }
+    else if(text === "chatgpt"){
+    window.open("https://chatgpt.com","_blank");
+    }
   else{
-    alert("Instagram, YouTube ya Facebook likho");
+    alert("Just Type Social Media Sites👍");
   }
 function toggleBio() {
   let bio = document.getElementById("bioBox");
