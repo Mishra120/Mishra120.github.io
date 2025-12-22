@@ -1,64 +1,39 @@
-const audio = document.getElementById('audioPlayer');
-const playBtn = document.getElementById('play');
-const pauseBtn = document.getElementById('pause');
-const nextBtn = document.getElementById('next');
-const prevBtn = document.getElementById('prev');
-const forwardBtn = document.getElementById('forward');
-const rewindBtn = document.getElementById('rewind');
-const playlistItems = document.querySelectorAll('#playlist1 ul li');
+const audio = document.getElementById("audio");
+const songs = document.querySelectorAll("#playlist li");
 
 let currentIndex = 0;
 
-// Add song bars dynamically
-playlistItems.forEach(item => {
-  const barsContainer = document.createElement('div');
-  barsContainer.classList.add('song-bars');
-  for (let i=0;i<3;i++){
-    const bar = document.createElement('div');
-    bar.classList.add('bar');
-    barsContainer.appendChild(bar);
-  }
-  item.appendChild(barsContainer);
-});
-
-// Load song
 function loadSong(index){
-  playlistItems.forEach(item=>{
-    item.classList.remove('active');
-    item.querySelector('.song-name').classList.remove('active');
-    item.querySelectorAll('.bar').forEach(bar=>bar.style.animationPlayState='paused');
-  });
-  const currentItem = playlistItems[index];
-  currentItem.classList.add('active');
-  currentItem.querySelector('.song-name').classList.add('active');
-  currentItem.querySelectorAll('.bar').forEach(bar=>bar.style.animationPlayState='running');
-  audio.src = currentItem.dataset.src;
+  songs.forEach(s => s.classList.remove("active"));
+  songs[index].classList.add("active");
+  audio.src = songs[index].dataset.src;
+  audio.play();
 }
 
-// Controls
-playBtn.addEventListener('click',()=>audio.play());
-pauseBtn.addEventListener('click',()=>audio.pause());
-nextBtn.addEventListener('click',()=>{
-  currentIndex=(currentIndex+1)%playlistItems.length;
-  loadSong(currentIndex);
-  audio.play();
-});
-prevBtn.addEventListener('click',()=>{
-  currentIndex=(currentIndex-1+playlistItems.length)%playlistItems.length;
-  loadSong(currentIndex);
-  audio.play();
-});
-forwardBtn.addEventListener('click',()=>audio.currentTime+=10);
-rewindBtn.addEventListener('click',()=>audio.currentTime-=10);
-
-// Click on song to play
-playlistItems.forEach((item,index)=>{
-  item.addEventListener('click',()=>{
-    currentIndex=index;
+songs.forEach((song, index)=>{
+  song.addEventListener("click", ()=>{
+    currentIndex = index;
     loadSong(currentIndex);
-    audio.play();
   });
 });
 
-// Initialize
-loadSong(currentIndex);
+function playSong(){ audio.play(); }
+function pauseSong(){ audio.pause(); }
+
+function nextSong(){
+  currentIndex = (currentIndex + 1) % songs.length;
+  loadSong(currentIndex);
+}
+
+function prevSong(){
+  currentIndex = (currentIndex - 1 + songs.length) % songs.length;
+  loadSong(currentIndex);
+}
+
+function seek(sec){
+  audio.currentTime += sec;
+}
+
+audio.addEventListener("ended", nextSong);
+
+loadSong(0);
