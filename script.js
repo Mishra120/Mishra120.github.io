@@ -13,4 +13,17 @@ function openSite(){
   else{
     alert("Instagram, YouTube ya Facebook likho");
   }
+function toggleBio() {
+  let bio = document.getElementById("bioBox");
+  bio.style.display = bio.style.display === "block" ? "none" : "block";
 }
+
+function toggleMenu() {
+  let menu = document.getElementById("menuBox");
+  menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+
+function toggleDark() {
+  document.body.classList.toggle("dark");
+}
+  
