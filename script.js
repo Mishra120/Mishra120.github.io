@@ -78,4 +78,24 @@ function acceptPopup() {
 function closePopup() {
   document.getElementById("welcomePopup").style.display = "none";
 }
+function toggleLoginOptions() {
+  let box = document.getElementById("loginOptions");
+  box.style.display = box.style.display === "block" ? "none" : "block";
+}
 
+function socialLogin(type) {
+  let url = "";
+
+  if (type === "youtube") {
+    url = "https://accounts.google.com/signin";
+  }
+  if (type === "instagram") {
+    url = "https://www.instagram.com/accounts/login/";
+  }
+  if (type === "facebook") {
+    url = "https://www.facebook.com/login/";
+  }
+
+  window.open(url, "_self"); // same tab
+}
+});
