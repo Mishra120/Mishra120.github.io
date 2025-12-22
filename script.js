@@ -2,17 +2,18 @@ function openSite(){
   let text = document.getElementById("siteInput").value.toLowerCase().trim();
 
   if(text === "instagram"){
-    window.open("https://instagram.com","_blank");
+    window.open("https://www.instagram.com/officialchandanmishra21?igsh=M3E4OTU4MDI4am52","_blank");
   }
   else if(text === "youtube"){
-    window.open("https://youtube.com","_blank");
+    window.open("https://youtube.com/@chandan_bhaktivibes?si=5GOIVlgaTULgmedC","_blank");
   }
   else if(text === "facebook"){
-    window.open("https://facebook.com","_blank");
+    window.open("https://www.facebook.com/share/1JfNGJaEmj/","_blank");
   }
   else{
     alert("Just Type Social Media Sites👍");
   }
+}
 function toggleBio() {
   let bio = document.getElementById("bioBox");
   bio.style.display = bio.style.display === "block" ? "none" : "block";
@@ -26,8 +27,8 @@ function toggleMenu() {
 function toggleDark() {
   document.body.classList.toggle("dark");
 }
-let cropper;
-
+let cropper{
+  
 function openCrop(){
   document.getElementById("fileInput").click();
 }
@@ -59,4 +60,4 @@ function applyCrop(){
   document.getElementById("cropBox").style.display = "none";
   cropper.destroy();
 }
-  
+}
