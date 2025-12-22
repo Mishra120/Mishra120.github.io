@@ -1,0 +1,40 @@
+body{
+  background: #0b0b0b;
+  color: white;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+h1{ color: gold; margin: 20px; }
+
+.gallery{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.card{
+  background: #111;
+  border-radius: 15px;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(255,215,0,0.3);
+}
+
+.card img{
+  width: 100%;
+  border-radius: 10px;
+}
+
+.download-btn{
+  display: block;
+  margin-top: 10px;
+  padding: 8px;
+  background: gold;
+  color: black;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.download-btn:hover{ background: orange; }
