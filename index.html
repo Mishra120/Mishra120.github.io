@@ -60,6 +60,25 @@
       <button onclick="applyCrop()">Crop</button>
     </div>
   </div>
+  <!-- Welcome Popup -->
+<div id="welcomePopup" class="popup-overlay">
+  <div class="popup-box">
+    <h2>Your privacy settings</h2>
+    <p>
+      Welcome to my website 🙏  
+      This site uses basic cookies for better experience.
+    </p>
+
+    <div class="popup-actions">
+      <button onclick="acceptPopup()" class="accept-btn">
+        Accept All
+      </button>
+      <button onclick="closePopup()" class="close-btn">
+        Close
+      </button>
+    </div>
+  </div>
+</div>
   <script src="https://unpkg.com/cropperjs/dist/cropper.js"></script>
 <script src="script.js"></script>
 </body>
