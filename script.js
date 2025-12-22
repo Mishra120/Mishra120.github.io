@@ -62,9 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("cropBox").style.display = "none";
     cropper.destroy();
   };
-
-});
-window.addEventListener("load", function () {
+  window.addEventListener("load", function () {
   if (!localStorage.getItem("popupAccepted")) {
     document.getElementById("welcomePopup").style.display = "flex";
   }
@@ -78,5 +76,5 @@ function acceptPopup() {
 function closePopup() {
   document.getElementById("welcomePopup").style.display = "none";
 }
-};
+});
 });
