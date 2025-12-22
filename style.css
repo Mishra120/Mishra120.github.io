@@ -125,79 +125,125 @@ p.bio {
   border-radius: 20px;
   cursor: pointer;
 }
-
-/* Dark mode */
-body.dark {
-  background: #121212;
-  color: white;
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-.top-bar {
+/* ===== TOP RIGHT FIXED BAR ===== */
+.top-right {
+  position: fixed;
+  top: 12px;
+  right: 12px;
   display: flex;
   align-items: center;
-  padding: 12px;
   gap: 10px;
+  z-index: 1000;
 }
 
-/* Profile pic */
-.profile img {
-  width: 45px;
-  height: 45px;
+/* ===== PROFILE IMAGE ===== */
+.profile-pic {
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
+  object-fit: cover;
   border: 2px solid #ffcc00;
   cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Bio box */
-.bio-box {
-  display: none;
-  background: #fff7cc;
-  padding: 8px 12px;
-  border-radius: 8px;
-  animation: fade 0.3s ease;
+.profile-pic:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 204, 0, 0.7);
 }
 
-body.dark .bio-box {
-  background: #333;
-}
-
-/* 3 dot */
+/* ===== 3 DOT MENU ===== */
 .menu {
-  margin-left: auto;
   position: relative;
-}
-
-.menu span {
-  font-size: 22px;
+  font-size: 24px;
   cursor: pointer;
+  user-select: none;
 }
 
-/* Menu box */
+/* ===== MENU DROPDOWN ===== */
 .menu-box {
-  display: none;
   position: absolute;
+  top: 30px;
   right: 0;
-  top: 25px;
-  background: white;
-  border-radius: 6px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  min-width: 140px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  display: none;
+  overflow: hidden;
 }
 
 .menu-box p {
-  margin: 0;
   padding: 10px 15px;
+  font-size: 14px;
   cursor: pointer;
+  transition: background 0.2s ease;
 }
 
 .menu-box p:hover {
   background: #ffcc00;
 }
 
-/* Dark menu */
-body.dark .menu-box {
-  background: #222;
+/* ===== DARK MODE ===== */
+body.dark {
+  background: #121212;
+  color: #ffffff;
 }
 
+body.dark .menu-box {
+  background: #1f1f1f;
+}
+
+body.dark .menu-box p:hover {
+  background: #333;
+}
+
+/* ===== IMAGE CROP MODAL ===== */
+#cropBox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+/* ===== CROP CARD ===== */
+.crop-card {
+  background: #ffffff;
+  padding: 12px;
+  width: 90%;
+  max-width: 320px;
+  border-radius: 10px;
+  text-align: center;
+}
+.crop-card img {
+  max-width: 100%;
+  border-radius: 6px;
+}
+/* ===== CROP BUTTON ===== */
+.crop-card button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background: #ffcc00;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.crop-card button:hover {
+  background: #ffb300;
+}
 @keyframes fade {
   from { opacity: 0; transform: translateY(-5px); }
   to { opacity: 1; transform: translateY(0); }
