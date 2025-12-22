@@ -100,8 +100,16 @@ p.bio {
 
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   z-index: 999;
+  outline:none;
+  
 }
-
+@keyframes borderGlow {
+  0%   { border-color: red; }
+  25%  { border-color: orange; }
+  50%  { border-color: yellow; }
+  75%  { border-color: lime; }
+  100% { border-color: red; }
+}
 .search input{
   border: none;
   outline: none;
