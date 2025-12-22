@@ -1,18 +1,28 @@
-function openSite(){
+function openSite() {
   let text = document.getElementById("siteInput").value.toLowerCase().trim();
 
-  if(text === "instagram"){
-    window.open("https://www.instagram.com/officialchandanmishra21?igsh=M3E4OTU4MDI4am52","_blank");
+  if (text === "instagram") {
+    window.open(
+      "https://www.instagram.com/officialchandanmishra21",
+      "_blank"
+    );
+  } 
+  else if (text === "youtube") {
+    window.open(
+      "https://www.youtube.com/@chandan_bhaktivibes",
+      "_blank"
+    );
+  } 
+  else if (text === "facebook") {
+    window.open(
+      "https://www.facebook.com/share/1JfNGJaEmj/",
+      "_blank"
+    );
+  } 
+  else {
+    alert("Just type: instagram, youtube or facebook 👍");
   }
-  else if(text === "youtube"){
-    window.open("https://youtube.com/@chandan_bhaktivibes?si=5GOIVlgaTULgmedC","_blank");
-  }
-  else if(text === "facebook"){
-    window.open("https://www.facebook.com/share/1JfNGJaEmj/","_blank");
-  }
-  else{
-    alert("Just Type Social Media Sites👍");
-  }
+}
 }
 function toggleBio() {
   let bio = document.getElementById("bioBox");
