@@ -1,55 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="RadheKrishna Bhakti Reels creator | Follow Chandan Mishra on Instagram">
-<meta name="keywords" content="Chandan Mishra">
-<meta name="author" content="Chandan Mishra">
-  
-  <title>Insta Bio – Chandan</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Chandan Mishra | Bhakti Creator</title>
+
+  <meta name="description" content="Official website of Chandan Mishra – Bhakti Creator. Follow Radhe Krishna Bhakti Reels on Instagram & YouTube.">
+  <meta name="keywords" content="Chandan Mishra, Bhakti Creator, Radhe Krishna reels, Chandan Bhakti, Instagram Bhakti Creator">
+  <meta name="author" content="Chandan Mishra">
+
   <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://unpkg.com/cropperjs/dist/cropper.css">
+  <link rel="stylesheet" href="https://unpkg.com/cropperjs/dist/cropper.css">
 </head>
-<body style="text-align:center; font-family:Arial;">
+
+<body style="text-align:center;font-family:Arial;">
+
   <div class="container">
-  <h1 class="animated-text">Chandan Mishra</h1>
- <marquee> <p>Radhekrishna Bhakti Page </p></marquee></div>
-  <div class="links">
-  <a href="https://www.instagram.com/officialchandanmishra21?igsh=M3E4OTU4MDI4am52" class="btn">Instagram</a>
-  <a href="https://youtube.com/@chandan_bhaktivibes?si=_jPGW_xsWIVqybDO" class="btn">YouTube</a>
-  <a href="https://www.facebook.com/share/1BapzyHKNr/" class="btn">Facebook</a></br>
-  </br>
+    <h1 class="animated-text">Chandan Mishra</h1>
+    <h2>Official Website of Chandan Mishra – Bhakti Creator</h2>
+
+    <marquee>🌸 Radhe Krishna Bhakti Page 🌸</marquee>
+
+    <div class="links">
+      <a class="btn" href="https://www.instagram.com/officialchandanmishra21/" target="_blank">Instagram</a><br><br>
+      <a class="btn" href="https://www.youtube.com/@chandan_bhaktivibes" target="_blank">YouTube</a><br><br>
+      <a class="btn" href="https://www.facebook.com/share/1JFNgJAEmj/" target="_blank">Facebook</a>
+    </div>
+
     <div class="search">
-  <input id="siteInput" type="text" placeholder="Type instagram, youtube...">
-  <button onclick="openSite()">Go</button>
+      <input id="siteInput" type="text" placeholder="Type instagram, youtube...">
+      <button onclick="openSite()">Go</button>
     </div>
   </div>
-    <div class="top-right">
-  <img id="profilePic" src="mishra.jpg" class="profile-pic" onclick="openCrop()">
-  <div class="menu">
-    <span onclick="toggleMenu()">⋮</span>
-    <div class="menu-box" id="menuBox">
-      <p onclick="toggleDark()">🌙 Dark Mode</p>
+
+  <div class="top-right">
+    <img id="profilePic" src="mishra.jpg" class="profile-pic" onclick="openCrop()">
+
+    <div class="menu">
+      <span onclick="toggleMenu()">☰</span>
+      <div class="menu-box" id="menuBox">
+        <p onclick="toggleDark()">🌙 Dark Mode</p>
+        <p onclick="toggleBio()">👤 Bio</p>
+      </div>
     </div>
   </div>
-</div>
-<!-- Hidden file input -->
-<input type="file" id="fileInput" accept="image/*" hidden>
-  <!-- Bio box -->
-  <div class="bio-box" id="bioBox">
+
+  <input type="file" id="fileInput" accept="image/*" hidden>
+
+  <div class="bio-box" id="bioBox" style="display:none;">
     <h4>Chandan Mishra</h4>
     <p>Your Ultimate Bhakti Creator 🌼</p>
   </div>
-  </div>
-    </div>    
-    <div id="cropBox" style="display:none; position:fixed; inset:0; background:#000000aa; z-index:1000;">
-  <div style="background:#fff; margin:10% auto; padding:10px; width:300px;">
-    <img id="cropImage" style="max-width:100%;">
-    <button onclick="applyCrop()">Crop</button>
-  </div>
+
+  <div id="cropBox" style="display:none;position:fixed;inset:0;background:#000000aa;z-index:1000;">
+    <div style="background:#fff;margin:10% auto;padding:10px;width:300px;">
+      <img id="cropImage" style="max-width:100%;">
+      <button onclick="applyCrop()">Crop</button>
     </div>
+  </div>
+
+  <!-- JS FILE -->
   <script src="script.js"></script>
-    <script src="https://unpkg.com/cropperjs/dist/cropper.js"></script>
+
+  <!-- Cropper JS -->
+  <script src="https://unpkg.com/cropperjs/dist/cropper.js"></script>
+
 </body>
 </html>
 
