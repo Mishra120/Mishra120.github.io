@@ -64,3 +64,18 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 
 });
+window.addEventListener("load", function () {
+  if (!localStorage.getItem("popupAccepted")) {
+    document.getElementById("welcomePopup").style.display = "flex";
+  }
+});
+
+function acceptPopup() {
+  localStorage.setItem("popupAccepted", "yes");
+  document.getElementById("welcomePopup").style.display = "none";
+}
+
+function closePopup() {
+  document.getElementById("welcomePopup").style.display = "none";
+}
+
