@@ -1,0 +1,64 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #fefbd8;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.playlist-container {
+  max-width: 600px;
+  width: 100%;
+  background: #fff3b0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+h1, h2 {
+  text-align: center;
+  color: #ff6f61;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+}
+
+li {
+  padding: 10px;
+  border-bottom: 1px solid #ffd6a5;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+li:hover, li.active {
+  background: #ffb703;
+  color: #fff;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+button {
+  background: #fb8500;
+  border: none;
+  color: #fff;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  flex: 1 1 30%;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #ffb703;
+}
