@@ -1,4 +1,55 @@
 <!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cute Lamp Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- लैंप सेक्शन -->
+        <div class="lamp-container">
+            <div class="lamp">
+                <div class="lamp-top">
+                    <div class="eyes"></div>
+                    <div class="mouth"></div>
+                </div>
+                <div class="lamp-base"></div>
+                <!-- लैंप की डोरी जिसपर क्लिक करना है -->
+                <div class="cord" id="lampCord">
+                    <div class="string"></div>
+                    <div class="ball"></div>
+                </div>
+            </div>
+            <div class="light-beam" id="lightBeam"></div>
+        </div>
+
+        <!-- लॉगिन फॉर्म सेक्शन -->
+        <div class="login-card" id="loginCard">
+            <h2>Welcome Back</h2>
+            <form>
+                <div class="input-group">
+                    <label>Username</label>
+                    <input type="text" placeholder="Enter your username">
+                </div>
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="Enter your password">
+                </div>
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+            <a href="#" class="forgot-link">Forgot Password?</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
