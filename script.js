@@ -1,3 +1,39 @@
+const lampCord = document.getElementById('lampCord');
+const lightBeam = document.getElementById('lightBeam');
+const loginCard = document.getElementById('loginCard');
+
+// अलग-अलग रंगों की लिस्ट जो डोरी खींचने पर बदलेंगे
+const colors = ['#4caf50', '#00bcd4', '#ff4081', '#9c27b0', '#ff9800'];
+let colorIndex = 0;
+let isLightOn = true;
+
+lampCord.addEventListener('click', () => {
+    if (isLightOn) {
+        // 1. लाइट बंद करें
+        lightBeam.style.opacity = '0';
+        loginCard.style.boxShadow = 'none';
+        loginCard.style.borderColor = '#30363d';
+        document.documentElement.style.setProperty('--glow-color', '#555');
+        isLightOn = false;
+    } else {
+        // 2. लाइट चालू करें और अगला कलर सेट करें
+        colorIndex = (colorIndex + 1) % colors.length;
+        const nextColor = colors[colorIndex];
+
+        // CSS Variables को अपडेट करें
+        document.documentElement.style.setProperty('--glow-color', nextColor);
+        
+        // लाइट बीम का कलर बदलें
+        lightBeam.style.background = `conic-gradient(from 145deg at 50% 0%, ${nextColor}33 0deg, transparent 70deg)`;
+        lightBeam.style.opacity = '1';
+        
+        // कार्ड का बॉर्डर और ग्लो बदलें
+        loginCard.style.borderColor = nextColor;
+        loginCard.style.boxShadow = `0 0 20px ${nextColor}`;
+        
+        isLightOn = true;
+    }
+});
 document.addEventListener("DOMContentLoaded", function () {
 
   function openSite() {
