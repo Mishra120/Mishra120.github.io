@@ -1,3 +1,198 @@
+:root {
+    --bg-color: #0d1117;
+    --card-bg: #161b22;
+    --glow-color: #4caf50; /* शुरुआत में हरा रंग */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+/* लैंप की बनावट */
+.lamp-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lamp {
+    position: relative;
+    z-index: 10;
+}
+
+.lamp-top {
+    width: 140px;
+    height: 100px;
+    background: #6ba384;
+    border-radius: 50px 50px 10px 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* क्यूट चेहरा */
+.eyes {
+    position: absolute;
+    top: 35px;
+    width: 70px;
+    display: flex;
+    justify-content: space-between;
+}
+.eyes::before, .eyes::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: #000;
+    border-radius: 50%;
+}
+
+.mouth {
+    width: 25px;
+    height: 15px;
+    background: #ff4a5a;
+    border-radius: 0 0 25px 25px;
+    margin-top: 25px;
+}
+
+.lamp-base {
+    width: 15px;
+    height: 120px;
+    background: #e0e0e0;
+    margin: 0 auto;
+    position: relative;
+}
+.lamp-base::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -25px;
+    width: 65px;
+    height: 15px;
+    background: #e0e0e0;
+    border-radius: 10px 10px 0 0;
+}
+
+/* डोरी (Cord) स्टाइल और एनीमेशन */
+.cord {
+    position: absolute;
+    top: 90px;
+    left: 25px;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.cord:active {
+    transform: translateY(15px); /* खींचने पर नीचे जाएगी */
+}
+
+.string {
+    width: 3px;
+    height: 70px;
+    background: #fff;
+}
+
+.ball {
+    width: 12px;
+    height: 12px;
+    background: #ffeb3b;
+    border-radius: 50%;
+    margin-left: -5px;
+}
+
+/* लैंप की रोशनी (Light Beam) */
+.light-beam {
+    position: absolute;
+    top: 90px;
+    width: 250px;
+    height: 300px;
+    background: conic-gradient(from 145deg at 50% 0%, rgba(76, 175, 80, 0.2) 0deg, transparent 70deg);
+    z-index: 1;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+/* लॉगिन कार्ड */
+.login-card {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 20px;
+    width: 350px;
+    border: 2px solid var(--glow-color);
+    box-shadow: 0 0 20px var(--glow-color);
+    transition: all 0.3s ease;
+}
+
+.login-card h2 {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #aaa;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    background: #21262d;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    color: #fff;
+    outline: none;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background: var(--glow-color);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.forgot-link {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #8b949e;
+    text-decoration: none;
+    font-size: 14px;
+  }
+}
+
+
 body {
   background: linear-gradient(-45deg, #1d2671, #c33764, #f5af19, #ff5e62);
   background-size: 400% 400%;
